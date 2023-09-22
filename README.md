@@ -9,7 +9,7 @@ This repo contains all projects and challenges into [Discover](https://www.rocke
 
 <div align="center">
 
-## 🛠 &nbsp; Tech Stack used
+## 🛠 Tech Stack used 🛠
   
 ![Javascript](https://img.shields.io/badge/-javascript-05122A?style=flat&logo=javascript)&nbsp;
 ![CSS3](https://img.shields.io/badge/-CSS3-05122A?style=flat&logo=css3)&nbsp;
