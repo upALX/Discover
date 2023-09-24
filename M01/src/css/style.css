@@ -1,0 +1,101 @@
+root * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: url(../assets/bg-mobile.jpg) no-repeat top center/cover;
+  color: white;
+}
+
+div.container {
+  width: 300px;
+  height: 320px;
+  margin: auto;
+  border: 1px solid green;
+}
+div.profile img {
+  width: 200px;
+  border-radius: 50%;
+  display: block;
+  margin: 60px auto 20px;
+}
+
+div.profile h3#username {
+  font-family: "Inter", sans-serif;
+  color: white;
+  text-align: center;
+}
+
+main{
+  font-family: "Inter", sans-serif;
+}
+
+main div.links-block{
+  width: 600px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+}
+
+main div.links-block ul{
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  text-align: center;
+  padding-inline-start: 0;
+  gap: 2em;
+}
+
+main div.links-block ul li{
+  font-family: "Inter", sans-serif;
+  padding: 12px 120px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  list-style-type: none;
+}
+
+main div ul a{
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  transition: background 0.5s;
+}
+
+ul a:hover{
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+footer.footer{
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 600px;
+  height: 100px;
+  border: 1px solid blue;
+}
+
+footer div.icons{
+  display: flex;
+  gap: 32px;
+  padding: 16px;
+}
+
+ion-icon{
+  font-size: 24px;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.5s;
+  
+}
+
+ion-icon:hover{
+  background-color: rgba(255, 255, 255, 0.5);
+}
