@@ -24,6 +24,7 @@ body {
   background: var(--background-url) no-repeat top center/cover;
   color: var(--text-color);
   font-family: "Inter", sans-serif;
+  height: 100vh;
 }
 
 a{
@@ -31,7 +32,8 @@ a{
 }
 
 div.container {
-  width: 300px;
+  width: 100%;
+  max-width: 360px;
   height: 250px;
   margin: 0 auto 2em;
 }
@@ -152,4 +154,14 @@ ion-icon{
 ion-icon:hover{
   background-color: var(--stroke-color);
   color: #000000;
+}
+
+@media (min-width: 700px) {
+  :root{
+    --background-url: url(../assets/bg-desktop.jpg);
+  }
+
+  .light-mode{
+    --background-url: url(../assets/bg-desktop-light.jpg);
+  }
 }
