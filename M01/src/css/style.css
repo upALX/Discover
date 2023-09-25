@@ -9,15 +9,16 @@
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
   --background-url: url(../assets/bg-mobile.jpg);
-  --switch-bg-url: url(./assets/moon-stars.svg)
+  --switch-bg-url: url(../assets/moon-stars.svg);
+  --highlight-color: #ffffff;
 }
 
 .light-mode{
   --text-color: #000000;
-  --stroke-color: rgba(152, 28, 154, 0.5);
+  --stroke-color: rgba(136, 8, 138, 0.887);
   --surface-color: rgba(160, 34, 154, 0.1);
   --background-url: url(../assets/bg-mobile-light.jpg);
-  --switch-bg-url: url(./assets/sun.svg)
+  --switch-bg-url: url(../assets/sun.svg)
 }
 
 body {
@@ -37,10 +38,12 @@ div.container {
   height: 250px;
   margin: 0 auto 2em;
 }
+
 div.profile img {
   width: 120px;
+  height: 120px;
   border-radius: 50%;
-  border: 1px solid var(--surface-color);
+  border: 1px solid var(--stroke-color);
   display: block;
   margin: 40px auto 20px;
 }
@@ -60,7 +63,7 @@ div.switch-button{
 .switch-button button{
   width: 32px;
   height: 32px;
-  background: var(--text-color) var(--switch-bg-url) no-repeat center;
+  background: white var(--switch-bg-url) no-repeat center;
   border: 0;
   border-radius: 50%;
   top: 50%;
@@ -68,6 +71,8 @@ div.switch-button{
   position: absolute;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: switch-slide-back 0.3s;
 }
 
 .switch-button span{
@@ -81,9 +86,12 @@ div.switch-button{
   border-radius: 9999px;
 }
 
+.switch-button button:hover{
+  outline: 9px solid var(--stroke-color);
+}
+
 .light-mode .switch-button button{
-  right: 0;
-  left: initial;
+  animation: switch-slide-in 0.5s forwards;
   background-color: var(--stroke-color);
 }
 
@@ -153,7 +161,12 @@ ion-icon{
 
 ion-icon:hover{
   background-color: var(--stroke-color);
-  color: #000000;
+  color: #00000030;
+}
+
+footer p span{
+  padding-bottom: 12px;
+  text-decoration: underline;
 }
 
 @media (min-width: 700px) {
@@ -163,5 +176,23 @@ ion-icon:hover{
 
   .light-mode{
     --background-url: url(../assets/bg-desktop-light.jpg);
+  }
+}
+
+@keyframes switch-slide-in{
+  from {
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+}
+
+@keyframes switch-slide-back{
+  from{
+    left: 50%;
+  }
+  to{
+    left: 0;
   }
 }
