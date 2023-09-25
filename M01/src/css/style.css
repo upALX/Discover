@@ -1,44 +1,97 @@
-root * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+:root{
+  --text-color: #ffffff;
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --background-url: url(../assets/bg-mobile.jpg);
+  --switch-bg-url: url(./assets/moon-stars.svg)
+}
+
+.light-mode{
+  --text-color: #000000;
+  --stroke-color: rgba(152, 28, 154, 0.5);
+  --surface-color: rgba(160, 34, 154, 0.1);
+  --background-url: url(../assets/bg-mobile-light.jpg);
+  --switch-bg-url: url(./assets/sun.svg)
+}
+
 body {
-  background: url(../assets/bg-mobile.jpg) no-repeat top center/cover;
-  color: white;
+  background: var(--background-url) no-repeat top center/cover;
+  color: var(--text-color);
+  font-family: "Inter", sans-serif;
+}
+
+a{
+  color: var(--text-color);
 }
 
 div.container {
   width: 300px;
-  height: 320px;
-  margin: auto;
-  border: 1px solid green;
+  height: 250px;
+  margin: 0 auto 2em;
 }
 div.profile img {
-  width: 200px;
+  width: 120px;
   border-radius: 50%;
+  border: 1px solid var(--surface-color);
   display: block;
-  margin: 60px auto 20px;
+  margin: 40px auto 20px;
 }
 
 div.profile h3#username {
   font-family: "Inter", sans-serif;
-  color: white;
+  color: var(--text-color);
   text-align: center;
 }
 
-main{
-  font-family: "Inter", sans-serif;
+div.switch-button{
+  margin: 1em auto;
+  position: relative;
+  width: 62px;
+}
+
+.switch-button button{
+  width: 32px;
+  height: 32px;
+  background: var(--text-color) var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  top: 50%;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.switch-button span{
+  width: 62px;
+  height: 24px;
+  display: block;
+  background-color: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+.light-mode .switch-button button{
+  right: 0;
+  left: initial;
+  background-color: var(--stroke-color);
 }
 
 main div.links-block{
-  width: 600px;
+  width: 340px;
   height: 300px;
-  margin: 0 auto;
+  margin: 0 auto 2em;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid red;
 }
 
 main div.links-block ul{
@@ -54,20 +107,20 @@ main div.links-block ul li{
   font-family: "Inter", sans-serif;
   padding: 12px 120px;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: var(--surface-color);
+  border: 1px solid var(--stroke-color); 
   list-style-type: none;
 }
 
 main div ul a{
   border-radius: 8px;
   text-decoration: none;
-  color: white;
+  color: var(--text-color);
   transition: background 0.5s;
 }
 
 ul a:hover{
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--surface-color);
 }
 
 footer.footer{
@@ -77,15 +130,15 @@ footer.footer{
   justify-content: center;
   flex-direction: column;
   gap: 0.5em;
-  width: 600px;
+  width: 340px;
   height: 100px;
-  border: 1px solid blue;
 }
 
 footer div.icons{
   display: flex;
-  gap: 32px;
+  gap: 12px;
   padding: 16px;
+  
 }
 
 ion-icon{
@@ -97,5 +150,6 @@ ion-icon{
 }
 
 ion-icon:hover{
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--stroke-color);
+  color: #000000;
 }
