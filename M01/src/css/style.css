@@ -75,6 +75,12 @@ div.switch-button{
   animation: switch-slide-back 0.3s;
 }
 
+.light-mode .switch-button button{
+  animation: switch-slide-in 0.5s forwards;
+  background-color: var(--stroke-color);
+  
+}
+
 .switch-button span{
   width: 62px;
   height: 24px;
@@ -87,12 +93,8 @@ div.switch-button{
 }
 
 .switch-button button:hover{
-  outline: 9px solid var(--stroke-color);
-}
-
-.light-mode .switch-button button{
-  animation: switch-slide-in 0.5s forwards;
-  background-color: var(--stroke-color);
+  outline: 9px solid var(--surface-color);
+  cursor: pointer;
 }
 
 main div.links-block{
@@ -148,7 +150,6 @@ footer div.icons{
   display: flex;
   gap: 12px;
   padding: 16px;
-  
 }
 
 ion-icon{
@@ -161,7 +162,7 @@ ion-icon{
 
 ion-icon:hover{
   background-color: var(--stroke-color);
-  color: #00000030;
+  color: black;
 }
 
 footer p span{
